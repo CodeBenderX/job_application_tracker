@@ -1,4 +1,6 @@
-import Image from "next/image";
+import {Button} from "@/components/ui/button";
+import {ArrowRight} from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,10 +13,16 @@ export default function Home() {
             </h1>
             <p className="text-muted-foreground">
               Capture, organize, and track your job applications in one place. Stay on top of your job search with our intuitive and user-friendly application tracker. Never miss a deadline or follow-up again!
-            </p>
-            <div className="flex flx-col items-center gap-4">
-              <button>Start for free</button>
-              <p>Free forever. No credit card required</p>
+            </p><br />
+            <div className="flex flex-col items-center gap-4">
+              <Link href="/sign-up">
+                <Button size="lg" className="h-12 px-8 text-lg font-medium bg-blue-400 hover:bg-blue-500 text-white">
+                  Start for free <ArrowRight className="ml-2"/>
+                </Button>
+              </Link>
+              <p className="text-sm text-muted-foreground">
+                Free forever. No credit card required
+              </p>
             </div>
           </div>
         </section>
