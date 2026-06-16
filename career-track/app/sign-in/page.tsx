@@ -8,7 +8,7 @@ export default function SignIn () {
               Welcome back! Sign in to continue tracking your job applications.
             </h1>
             <p className="text-muted-foreground">
-              Don't have an account? <a href="/sign-up" className="text-primary underline">Sign up here</a>
+              Don&apos;t have an account? <a href="/sign-up" className="text-primary underline">Sign up here</a>
             </p>
           </div>
         </section>

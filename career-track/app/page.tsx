@@ -1,6 +1,7 @@
 import {Button} from "@/components/ui/button";
 import {ArrowRight} from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -23,6 +24,23 @@ export default function Home() {
               <p className="text-sm text-muted-foreground">
                 Free forever. No credit card required
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/*Hero Images Section*/}
+        <section className="border-t bg-whitepy-16">
+          <div>
+            <div>
+              {/* Tabs */}
+              <div>
+                <Button>Organize Applications</Button>
+                <Button>Get Hired</Button>
+                <Button>Manage Boards</Button>
+              </div>
+              <div>
+                <Image src="/hero-images/hero1.png" alt="Organize Applications" width={600} height={400} className="mx-auto"/>
+              </div>
             </div>
           </div>
         </section>
