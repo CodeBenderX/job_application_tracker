@@ -1,9 +1,12 @@
+"use client";
 import {Button} from "@/components/ui/button";
 import {ArrowRight} from "lucide-react";
+import {useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("Organize Applications"); //organize, hired, boards
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <main className="flex-1">{/*Hero Section*/}
@@ -30,16 +33,18 @@ export default function Home() {
 
         {/*Hero Images Section*/}
         <section className="border-t bg-whitepy-16">
-          <div>
-            <div>
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-6xl">
               {/* Tabs */}
-              <div>
-                <Button>Organize Applications</Button>
-                <Button>Get Hired</Button>
-                <Button>Manage Boards</Button>
+              <div className="flex justify-center gap-2 mb-8">
+                <Button onClick={() => setActiveTab("organize")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "organize" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Organize Applications</Button>
+                <Button onClick={() => setActiveTab("hired")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "hired" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Get Hired</Button>
+                <Button onClick={() => setActiveTab("boards")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "boards" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Manage Boards</Button>
               </div>
-              <div>
-                <Image src="/hero-images/hero1.png" alt="Organize Applications" width={600} height={400} className="mx-auto"/>
+              <div className="relative mx-auto overflow-hidden rounded-lg border border-gray-200 shadow-xl">
+                {activeTab === "organize" && <Image src="/hero-images/hero1.png" alt="Organize Applications" width={1200} height={800} className="mx-auto"/>}
+                {activeTab === "hired" && <Image src="/hero-images/hero2.png" alt="Get Hired" width={1200} height={800} className="mx-auto"/>}
+                {activeTab === "boards" && <Image src="/hero-images/hero3.png" alt="Manage Boards" width={1200} height={800} className="mx-auto"/>}
               </div>
             </div>
           </div>
@@ -48,3 +53,6 @@ export default function Home() {
     </div>
   );
 }
+// useState is imported from React at the top of the file
+
+
