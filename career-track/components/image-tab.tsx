@@ -15,9 +15,9 @@ export default function ImageTab() {
             <Button onClick={() => setActiveTab("boards")} className={`rounded-lg px-6 py-3 text-sm font-medium transition-colors ${activeTab === "boards" ? "bg-primary text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}`}>Manage Boards</Button>
           </div>
           <div className="relative mx-auto overflow-hidden rounded-lg border border-gray-200 shadow-xl"> {/* Image Container */}
-            {activeTab === "organize" && <Image src="/hero-images/hero1.png" alt="Organize Applications" width={1200} height={800} className="mx-auto"/>}
-            {activeTab === "hired" && <Image src="/hero-images/hero2.png" alt="Get Hired" width={1200} height={800} className="mx-auto"/>}
-           {activeTab === "boards" && <Image src="/hero-images/hero3.png" alt="Manage Boards" width={1200} height={800} className="mx-auto"/>}
+            {activeTab === "organize" && <Image src="/hero-images/hero1.png" alt="Organize Applications" width={1200} height={800} className="mx-auto" loading="eager"/>}
+            {activeTab === "hired" && <Image src="/hero-images/hero2.png" alt="Get Hired" width={1200} height={800} className="mx-auto" loading="eager"/>}
+           {activeTab === "boards" && <Image src="/hero-images/hero3.png" alt="Manage Boards" width={1200} height={800} className="mx-auto" loading="eager"/>}
           </div>
         </div>   
       </div>
